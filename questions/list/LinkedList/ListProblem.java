@@ -25,35 +25,34 @@ public class ListProblem {
         }
         return false;
     }
-    public static LinkedList removeNth(Node head,int n){
-        LinkedList<Integer> listNew=new LinkedList<>();
+    public static void removeNth(Node head,int n){
+        
 
        Node fast=head;
        Node slow=head;
         for(int i = 0;i<n+1;i++){
              fast=fast.next;
-            System.out.println(fast.data+" i "+i);
+            
         }
         Node afterDeleting=null;
         while(fast!=null){
-
             fast=fast.next;
             slow=slow.next;
-            System.out.println(slow.data+" slow");
-            System.out.println(fast);
+           
         }
-        // slow=slow.next.next;
+        
         afterDeleting=slow.next.next;
         slow.next=afterDeleting;
-        System.out.println("sd  "+afterDeleting.data);
+        System.out.println("After deleting elemnt list is linke this");
         Node current=head;
         while(current!=null){
-            listNew.add((Integer)current.data);
+            System.out.print(" "+current.data);
+            current=current.next;
         }
-        return listNew;
+    
 
     }
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         LinkedList <Integer> list=new LinkedList<>();
         list.add(1);
         list.add(2);
@@ -77,10 +76,10 @@ public class ListProblem {
 
         // fifth.next=second;
         System.out.println("is it cycle in linkedlist "+isCycle(first));
-        int n=3;
+        int n=1;
         System.out.println("before removing element "+list);
         removeNth(first,n);
-        System.out.println("after removing element "+listNew);
+        
             // Node<Integer> current=first;
         
             // int i=0;
@@ -90,5 +89,6 @@ public class ListProblem {
             //     current=current.next;
             //     i++;
             // }
+
     }
 }
