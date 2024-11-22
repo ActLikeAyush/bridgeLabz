@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+D:\projectTEST\webProject\bridgeLabz\DSA\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-3720595044.index
-4169627870.index
