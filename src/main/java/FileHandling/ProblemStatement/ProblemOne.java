@@ -1,6 +1,5 @@
 package FileHandling.ProblemStatement;
 
-import javax.imageio.IIOException;
 import java.io.*;
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ public class ProblemOne {
 
             }
             else {
-                System.out.println("File already Exisit");
+                System.out.println("File already Exists");
             }
 
         }
@@ -114,10 +113,10 @@ public class ProblemOne {
             FileWriter fw=new FileWriter("C:/Users/HP/OneDrive/Desktop/source.txt");
             BufferedWriter bw=new BufferedWriter(fw);
             bw.write(sb.toString());
+            bw.close();
+            fw.close();
             System.out.println(sb);
             System.out.println("Successfully wrote");
-            fw.close();
-            bw.close();
 
         }
         catch (Exception e){
@@ -137,35 +136,56 @@ public class ProblemOne {
 //        ProblemOne.ReverseContent();
 //        ProblemOne.ReadFromFile();
 //        ProblemOne.CreateDummyData();
-        ProblemOne.fileProcessing();
+//        ProblemOne.fileProcessing();
+        ProblemOne.copyFile();
+    }
+
+    private static void copyFile() {
+
+        try{
+            FileReader fr=new FileReader("C:/Users/HP/OneDrive/Desktop/1.xlsx");
+            BufferedReader br=new BufferedReader(fr);
+            FileWriter fw=new FileWriter("C:/Users/HP/OneDrive/Desktop/dd1.txt",true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            String line;
+            while ((line=br.readLine())!=null){
+                bw.write(line);
+                System.out.println(line);
+            }
+            System.out.println();
+            bw.close();
+            fw.close();
+            fr.close();
+            br.close();
+            System.out.println("Successfuly created");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     private static void fileProcessing() {
 
-        String inputFilePath = "C:/Users/HP/OneDrive/Desktop/transactions.txt"; // Input file containing transaction records
-        String outputFilePath = "C:/Users/HP/OneDrive/Desktop/filtered_transactions.txt"; // Output file for filtered records
-        double thresholdAmount = 4000.0; // Set the threshold amount
+        String inputFilePath = "C:/Users/HP/OneDrive/Desktop/transactions.txt";
+        String outputFilePath = "C:/Users/HP/OneDrive/Desktop/filtered_transactions.txt";
+        double amount = 4000.0;
 
         try (
-                // Step 1: Set up BufferedReader to read from the input file
                 BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
-                // Step 2: Set up BufferedWriter to write to the output file
                 BufferedWriter bw = new BufferedWriter(new FileWriter(outputFilePath))
         ) {
             String line;
 
-            // Step 3: Read each line, process the data, and filter transactions
             while ((line = br.readLine()) != null) {
-                // Split the line to extract transaction fields
-                String[] fields = line.split(","); // Assuming fields are comma-separated
+                String[] fields = line.split(",");
                 String transactionID = fields[0];
                 String customerID = fields[1];
                 double transactionAmount = Double.parseDouble(fields[2]);
                 String date = fields[3];
 
-                // Step 4: Filter transactions based on the threshold amount
-                if (transactionAmount > thresholdAmount) {
-                    // Write the filtered transaction to the output file
+
+                if (transactionAmount > amount) {
                     bw.write(transactionID + "," + customerID + "," + transactionAmount + "," + date);
                     bw.newLine();
                 }
