@@ -32,7 +32,7 @@ public class ProblemOne {
             finally {
                 file.close();
             }
-            System.out.println("Succesfully wrote in the file ");
+            System.out.println("Successfully wrote in the file ");
         }
         catch(Exception e){
             System.out.println(e.getMessage());
