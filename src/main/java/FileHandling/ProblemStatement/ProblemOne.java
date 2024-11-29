@@ -137,7 +137,23 @@ public class ProblemOne {
 //        ProblemOne.ReadFromFile();
 //        ProblemOne.CreateDummyData();
 //        ProblemOne.fileProcessing();
-        ProblemOne.copyFile();
+//        ProblemOne.copyFile();
+        ProblemOne.ByteDataRead();
+    }
+
+    private static void ByteDataRead() {
+        try{
+            FileInputStream fis=new FileInputStream("C:/Users/HP/OneDrive/Desktop/SQL.pdf");
+            int data;
+            while((data=fis.read())!=-1){
+                System.out.print((char) data );
+            }
+            System.out.println();
+
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void copyFile() {
