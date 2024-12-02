@@ -19,6 +19,8 @@ class Company
         notify();
     }
 
+
+
     synchronized public int consume_item()throws Exception
     {
         if(!f)
