@@ -8,6 +8,7 @@
 //    public synchronized void producItem(int n)throws Exception{
 //        if(true){
 //            wait();
+
 //        }
 //        this.n=n;
 //        System.out.println("Produce Item is: "+n);
