@@ -1,6 +1,6 @@
 package BasicLogicalQuestions;
 
-public class anagramsWord {
+class anagramsWords {
     public static String sort(String a) {
         char[] c = a.toCharArray();
         for (int i = 0; i < c.length - 1; i++) {
@@ -23,8 +23,8 @@ public class anagramsWord {
         String d = b.trim().toLowerCase();
 
 
-        String c1 = anagramsWord.sort(c);
-        String c2 = anagramsWord.sort(d);
+        String c1 = anagramsWords.sort(c);
+        String c2 = anagramsWords.sort(d);
 
         if (c1.equals(c2)) {
             System.out.println( c + " and " + d + " are anagrams words");
@@ -33,3 +33,4 @@ public class anagramsWord {
         }
     }
 }
+
