@@ -7,7 +7,6 @@ public class Calc {
     public int array(int arr[]){
         int a=0;
 
-        System.out.println(arr[20]);
         return a;
     }
 }

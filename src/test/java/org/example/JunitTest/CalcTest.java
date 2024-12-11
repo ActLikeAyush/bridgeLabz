@@ -1,5 +1,6 @@
-package JunitTest;
+package org.example.JunitTest;
 
+import JunitTest.Calc;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
