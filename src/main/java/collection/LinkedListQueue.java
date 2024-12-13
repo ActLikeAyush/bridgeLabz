@@ -12,10 +12,9 @@ public class LinkedListQueue {
         lq.add(19);
         System.out.println(lq);
 
-
-
         System.out.println(lq.peek());
         System.out.println(lq.poll());
         System.out.println(lq);
+
     }
 }
