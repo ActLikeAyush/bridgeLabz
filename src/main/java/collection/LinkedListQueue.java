@@ -10,6 +10,7 @@ public class LinkedListQueue {
         lq.add(10);
         lq.offer(15);
         lq.add(19);
+
         System.out.println(lq);
 
         System.out.println(lq.peek());
